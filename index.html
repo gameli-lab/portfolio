@@ -3,11 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Benjamin Torfu - Software Engineer and Educator. Specializing in backend development and educational tools."
+    />
+    <meta
+      name="keywords"
+      content="software engineer, backend developer, educator, portfolio"
+    />
     <title>Benjamin Torfu - Portfolio</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
   </head>
   <body>
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle">Toggle Dark Mode</button>
+
     <!-- Navigation -->
     <nav>
       <ul>
@@ -15,12 +26,14 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="section">
+    <section id="home" class="section parallax">
       <div class="content">
         <h1>Benjamin Torfu</h1>
         <p>Software Engineer | Backend Developer | Educator</p>
@@ -46,17 +59,24 @@
     <section id="skills" class="section">
       <div class="content">
         <h2>Technical Skills</h2>
-        <ul>
-          <li>Programming Languages: C, Python, JavaScript, Bash</li>
-          <li>Web Development: HTML, CSS, Node.js</li>
-          <li>Databases: MySQL, PostgreSQL, MongoDB</li>
-          <li>
-            Tools & Platforms: GitHub, Google Workspace, Microsoft Office Suite
-          </li>
-          <li>
-            DevOps & Deployment: CI/CD pipelines, Docker, and system automation
-          </li>
-        </ul>
+        <div class="skill">
+          <span>Python</span>
+          <div class="progress-bar">
+            <div class="progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span>MySQL</span>
+          <div class="progress-bar">
+            <div class="progress" style="width: 85%"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -64,27 +84,58 @@
     <section id="projects" class="section">
       <div class="content">
         <h2>Projects</h2>
-        <div class="project">
-          <h3>Online School-Based Assessment System</h3>
-          <p>
-            Designed an automated assessment system using Google Sheets to
-            streamline grading and reporting.
-          </p>
+        <div class="carousel">
+          <div class="carousel-item">
+            <h3>Online School-Based Assessment System</h3>
+            <p>Designed an automated assessment system using Google Sheets.</p>
+          </div>
+          <div class="carousel-item">
+            <h3>Interactive Quiz Application</h3>
+            <p>
+              Built a full-stack quiz platform using Node.js and PostgreSQL.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <h3>Student Performance Tracker</h3>
+            <p>
+              Created a real-time data visualization tool for monitoring student
+              performance.
+            </p>
+          </div>
         </div>
-        <div class="project">
-          <h3>Interactive Quiz Application</h3>
-          <p>
-            Built a full-stack quiz platform using Node.js and PostgreSQL,
-            providing a dynamic user experience.
-          </p>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+      <div class="content">
+        <h2>Blog</h2>
+        <div class="blog-grid">
+          <div class="blog-post">
+            <h3>How I Built My First Full-Stack App</h3>
+            <p>
+              Learn about my journey building an interactive quiz application.
+            </p>
+            <a href="#">Read More</a>
+          </div>
+          <div class="blog-post">
+            <h3>Top 5 Tools for Backend Developers</h3>
+            <p>Discover the tools I use daily to streamline my workflow.</p>
+            <a href="#">Read More</a>
+          </div>
         </div>
-        <div class="project">
-          <h3>Student Performance Tracker</h3>
-          <p>
-            Created a real-time data visualization tool for monitoring and
-            analyzing student performance.
-          </p>
-        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+      <div class="content">
+        <h2>Testimonials</h2>
+        <blockquote>
+          "Benjamin is an exceptional teacher and developer. His online
+          assessment system revolutionized our school's grading process."
+          <cite>- John Doe, Principal</cite>
+        </blockquote>
       </div>
     </section>
 
@@ -92,16 +143,33 @@
     <section id="contact" class="section">
       <div class="content">
         <h2>Contact Me</h2>
-        <p>Email: btorfu@gmail.com | btorfu@proton.me</p>
-        <p>Phone: 0541813988 / 0249390548</p>
-        <p>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank"
-            >LinkedIn</a
-          >
-          |
-          <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-        </p>
+        <form id="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank">
+            <img src="linkedin-icon.png" alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/yourprofile" target="_blank">
+            <img src="github-icon.png" alt="GitHub" />
+          </a>
+        </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Benjamin Torfu. All rights reserved.</p>
+      <nav>
+        <a href="#home">Home</a> | <a href="#about">About</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">↑</button>
   </body>
 </html>
