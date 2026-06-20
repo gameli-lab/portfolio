@@ -1,175 +1,561 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Benjamin Torfu - Software Engineer and Educator. Specializing in backend development and educational tools."
-    />
-    <meta
-      name="keywords"
-      content="software engineer, backend developer, educator, portfolio"
-    />
-    <title>Benjamin Torfu - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
-  </head>
-  <body>
-    <!-- Dark Mode Toggle -->
-    <button id="theme-toggle">Toggle Dark Mode</button>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Navigation -->
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- SEO Meta Tags -->
+  <title>Benjamin Torfu (Torvex) — Software Engineer & Educator | Ghana</title>
+  <meta name="description" content="Benjamin Torfu, known as Torvex, is a Software Engineer, Backend Developer, and Educator from Ghana specializing in Python, JavaScript, MySQL, and DevOps. ALX Software Engineering graduate with 7+ years of teaching experience." />
+  <meta name="keywords" content="Benjamin Torfu, Torvex, software engineer Ghana, backend developer, Python developer, JavaScript developer, ALX graduate, educator, portfolio" />
+  <meta name="author" content="Benjamin Torfu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://torvex.info/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://torvex.info/" />
+  <meta property="og:title" content="Benjamin Torfu (Torvex) — Software Engineer & Educator" />
+  <meta property="og:description" content="Software Engineer and Educator from Ghana. Backend development specialist with expertise in Python, JavaScript, MySQL, and DevOps." />
+  <meta property="og:image" content="https://torvex.info/og-image.png" />
+  <meta property="og:site_name" content="Torvex Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Benjamin Torfu (Torvex) — Software Engineer & Educator" />
+  <meta name="twitter:description" content="Software Engineer and Educator from Ghana. Backend development specialist with expertise in Python, JavaScript, MySQL, and DevOps." />
+  <meta name="twitter:image" content="https://torvex.info/og-image.png" />
+
+  <!-- AEO: Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Benjamin Torfu",
+    "alternateName": "Torvex",
+    "jobTitle": "Software Engineer",
+    "description": "Software Engineer, Backend Developer, and Educator from Ghana. ALX Software Engineering graduate with over 7 years of teaching experience.",
+    "url": "https://torvex.info",
+    "sameAs": [
+      "https://github.com/gameli-lab",
+      "https://linkedin.com/in/benjamintorfu"
+    ],
+    "knowsAbout": ["Python", "JavaScript", "MySQL", "DevOps", "Backend Development", "Software Engineering", "Education"],
+    "nationality": "Ghanaian",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "ALX Software Engineering"
+    }
+  }
+  </script>
+
+  <!-- FAQPage Schema for AEO (Answer Engine Optimization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is Benjamin Torfu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Benjamin Torfu, also known as Torvex, is a Software Engineer, Backend Developer, and Educator from Ghana. He is an ALX Software Engineering graduate with over 7 years of mathematics teaching experience, specializing in Python, JavaScript, MySQL, and DevOps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What technologies does Benjamin Torfu specialize in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Benjamin Torfu specializes in Python, JavaScript, C, MySQL, DevOps, and GitHub. He focuses on backend development and has built educational tools, assessment systems, and full-stack applications."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header role="banner">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="#home" class="nav__logo" aria-label="Torvex home">
+          <span class="nav__logo-bracket">{</span>
+          <span class="nav__logo-text">Torvex</span>
+          <span class="nav__logo-bracket">}</span>
+        </a>
+
+        <button class="nav__hamburger" id="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+
+        <ul class="nav__links" id="nav-menu" role="list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Projects</a></li>
+          <li><a href="#blog" class="nav__link">Blog</a></li>
+          <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle color mode">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
     </nav>
+  </header>
 
-    <!-- Home Section -->
-    <section id="home" class="section parallax">
-      <div class="content">
-        <h1>Benjamin Torfu</h1>
-        <p>Software Engineer | Backend Developer | Educator</p>
-        <a href="#about" class="btn">Learn More</a>
-      </div>
-    </section>
+  <main id="main">
 
-    <!-- About Section -->
-    <section id="about" class="section">
-      <div class="content">
-        <h2>About Me</h2>
-        <p>
-          Passionate software engineer with a background in mathematics
-          education and over seven years of teaching experience. Recently
-          graduated from ALX Software Engineering program, specializing in
-          backend development and proficient in C, Python, JavaScript, MySQL,
-          DevOps, and GitHub.
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero" aria-labelledby="hero-heading">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <span class="hero__eyebrow-code" aria-hidden="true">~/</span>
+          Hello, world. I'm
         </p>
+        <h1 id="hero-heading" class="hero__name">
+          Benjamin <span class="hero__name-accent">Torfu</span>
+        </h1>
+        <div class="hero__tagline" aria-label="Software Engineer, Backend Developer, and Educator">
+          <span class="hero__tagline-prefix" aria-hidden="true">&gt; </span>
+          <span class="hero__tagline-typed" id="typed-text" aria-live="polite"></span>
+          <span class="hero__cursor" aria-hidden="true">|</span>
+        </div>
+        <p class="hero__sub">
+          ALX Software Engineering graduate · 7+ years in education · Building tools that teach and scale.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View My Work</a>
+          <a href="#contact" class="btn btn--ghost">Get In Touch</a>
+        </div>
+        <div class="hero__stats" aria-label="Quick stats">
+          <div class="hero__stat">
+            <span class="hero__stat-num">7+</span>
+            <span class="hero__stat-label">Years Teaching</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">5+</span>
+            <span class="hero__stat-label">Languages</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">3+</span>
+            <span class="hero__stat-label">Major Projects</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="hero__scroll-line"></div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-      <div class="content">
-        <h2>Technical Skills</h2>
-        <div class="skill">
-          <span>Python</span>
-          <div class="progress-bar">
-            <div class="progress" style="width: 90%"></div>
-          </div>
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label" aria-hidden="true">01</span>
+          <h2 id="about-heading" class="section-title">About Me</h2>
         </div>
-        <div class="skill">
-          <span>JavaScript</span>
-          <div class="progress-bar">
-            <div class="progress" style="width: 80%"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <span>MySQL</span>
-          <div class="progress-bar">
-            <div class="progress" style="width: 85%"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <div class="content">
-        <h2>Projects</h2>
-        <div class="carousel">
-          <div class="carousel-item">
-            <h3>Online School-Based Assessment System</h3>
-            <p>Designed an automated assessment system using Google Sheets.</p>
-          </div>
-          <div class="carousel-item">
-            <h3>Interactive Quiz Application</h3>
-            <p>
-              Built a full-stack quiz platform using Node.js and PostgreSQL.
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p class="about__lead">
+              I'm a software engineer who taught mathematics for over seven years before pivoting to tech — so I know how to break complex ideas into clear, learnable pieces.
             </p>
-          </div>
-          <div class="carousel-item">
-            <h3>Student Performance Tracker</h3>
             <p>
-              Created a real-time data visualization tool for monitoring student
-              performance.
+              After graduating from the <strong>ALX Software Engineering</strong> program, I've specialized in backend development, building systems that are reliable, scalable, and accessible. My dual background in education and engineering drives me to create tools that genuinely help people learn and grow.
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="section">
-      <div class="content">
-        <h2>Blog</h2>
-        <div class="blog-grid">
-          <div class="blog-post">
-            <h3>How I Built My First Full-Stack App</h3>
             <p>
-              Learn about my journey building an interactive quiz application.
+              When I'm not writing code, I'm thinking about how technology can close educational gaps — especially in Ghana and across Africa.
             </p>
-            <a href="#">Read More</a>
+            <a href="#contact" class="btn btn--primary" style="margin-top:1.5rem;">Let's Build Together</a>
           </div>
-          <div class="blog-post">
-            <h3>Top 5 Tools for Backend Developers</h3>
-            <p>Discover the tools I use daily to streamline my workflow.</p>
-            <a href="#">Read More</a>
+          <div class="about__card reveal reveal--delay">
+            <div class="about__info-grid">
+              <div class="about__info-item">
+                <span class="about__info-icon" aria-hidden="true">📍</span>
+                <div>
+                  <strong>Location</strong>
+                  <span>Ghana, West Africa</span>
+                </div>
+              </div>
+              <div class="about__info-item">
+                <span class="about__info-icon" aria-hidden="true">🎓</span>
+                <div>
+                  <strong>Education</strong>
+                  <span>ALX Software Engineering</span>
+                </div>
+              </div>
+              <div class="about__info-item">
+                <span class="about__info-icon" aria-hidden="true">💼</span>
+                <div>
+                  <strong>Focus</strong>
+                  <span>Backend &amp; EdTech</span>
+                </div>
+              </div>
+              <div class="about__info-item">
+                <span class="about__info-icon" aria-hidden="true">🌐</span>
+                <div>
+                  <strong>Open To</strong>
+                  <span>Remote &amp; Hybrid Roles</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
-      <div class="content">
-        <h2>Testimonials</h2>
-        <blockquote>
-          "Benjamin is an exceptional teacher and developer. His online
-          assessment system revolutionized our school's grading process."
-          <cite>- John Doe, Principal</cite>
-        </blockquote>
-      </div>
-    </section>
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="section section--alt" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label" aria-hidden="true">02</span>
+          <h2 id="skills-heading" class="section-title">Technical Skills</h2>
+        </div>
+        <div class="skills__grid">
+          <div class="skills__bars reveal">
+            <h3 class="skills__group-title">Languages &amp; Frameworks</h3>
+            <div class="skill-bar" role="group" aria-label="Python proficiency: 90%">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name">Python</span>
+                <span class="skill-bar__pct" aria-hidden="true">90%</span>
+              </div>
+              <div class="skill-bar__track" aria-hidden="true">
+                <div class="skill-bar__fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="group" aria-label="JavaScript proficiency: 80%">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name">JavaScript</span>
+                <span class="skill-bar__pct" aria-hidden="true">80%</span>
+              </div>
+              <div class="skill-bar__track" aria-hidden="true">
+                <div class="skill-bar__fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="group" aria-label="C proficiency: 75%">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name">C</span>
+                <span class="skill-bar__pct" aria-hidden="true">75%</span>
+              </div>
+              <div class="skill-bar__track" aria-hidden="true">
+                <div class="skill-bar__fill" data-width="75"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="group" aria-label="MySQL proficiency: 85%">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name">MySQL</span>
+                <span class="skill-bar__pct" aria-hidden="true">85%</span>
+              </div>
+              <div class="skill-bar__track" aria-hidden="true">
+                <div class="skill-bar__fill" data-width="85"></div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="content">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/yourprofile" target="_blank">
-            <img src="linkedin-icon.png" alt="LinkedIn" />
-          </a>
-          <a href="https://github.com/yourprofile" target="_blank">
-            <img src="github-icon.png" alt="GitHub" />
-          </a>
+          <div class="skills__tags reveal reveal--delay">
+            <h3 class="skills__group-title">Tools &amp; Platforms</h3>
+            <div class="skills__tag-cloud">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
+              <span class="skill-tag">DevOps</span>
+              <span class="skill-tag">Linux / Bash</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Google Sheets API</span>
+              <span class="skill-tag">Data Visualization</span>
+              <span class="skill-tag">Agile</span>
+              <span class="skill-tag">Technical Writing</span>
+            </div>
+
+            <h3 class="skills__group-title" style="margin-top:2rem;">Soft Skills</h3>
+            <div class="skills__tag-cloud">
+              <span class="skill-tag skill-tag--soft">Curriculum Design</span>
+              <span class="skill-tag skill-tag--soft">Mentorship</span>
+              <span class="skill-tag skill-tag--soft">Problem Solving</span>
+              <span class="skill-tag skill-tag--soft">Communication</span>
+              <span class="skill-tag skill-tag--soft">Team Leadership</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 Benjamin Torfu. All rights reserved.</p>
-      <nav>
-        <a href="#home">Home</a> | <a href="#about">About</a> |
-        <a href="#contact">Contact</a>
-      </nav>
-    </footer>
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label" aria-hidden="true">03</span>
+          <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+        </div>
+        <div class="projects__grid">
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" title="Go to top">↑</button>
-  </body>
+          <article class="project-card reveal" aria-labelledby="proj1-title">
+            <div class="project-card__top">
+              <div class="project-card__icon" aria-hidden="true">📊</div>
+              <div class="project-card__links">
+                <a href="#" class="project-card__link" aria-label="View source code for Online School-Based Assessment System">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="project-card__link" aria-label="View live demo of Online School-Based Assessment System">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 id="proj1-title" class="project-card__title">Online School-Based Assessment System</h3>
+            <p class="project-card__desc">Automated assessment system using Google Sheets API — digitizing school-based scoring and reporting for teachers across multiple classrooms.</p>
+            <ul class="project-card__tags" aria-label="Technologies used">
+              <li>Google Sheets API</li>
+              <li>Python</li>
+              <li>Automation</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal reveal--delay" aria-labelledby="proj2-title">
+            <div class="project-card__top">
+              <div class="project-card__icon" aria-hidden="true">🧠</div>
+              <div class="project-card__links">
+                <a href="#" class="project-card__link" aria-label="View source code for Interactive Quiz Application">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="project-card__link" aria-label="View live demo of Interactive Quiz Application">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 id="proj2-title" class="project-card__title">Interactive Quiz Application</h3>
+            <p class="project-card__desc">Full-stack quiz platform with real-time scoring, timed questions, and performance analytics. Built for educators to deploy custom quizzes instantly.</p>
+            <ul class="project-card__tags" aria-label="Technologies used">
+              <li>Node.js</li>
+              <li>PostgreSQL</li>
+              <li>JavaScript</li>
+            </ul>
+          </article>
+
+          <article class="project-card reveal reveal--delay-2" aria-labelledby="proj3-title">
+            <div class="project-card__top">
+              <div class="project-card__icon" aria-hidden="true">📈</div>
+              <div class="project-card__links">
+                <a href="#" class="project-card__link" aria-label="View source code for Student Performance Tracker">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+                <a href="#" class="project-card__link" aria-label="View live demo of Student Performance Tracker">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 id="proj3-title" class="project-card__title">Student Performance Tracker</h3>
+            <p class="project-card__desc">Real-time data visualization dashboard for monitoring individual and class-wide student performance trends — built to give teachers actionable insights fast.</p>
+            <ul class="project-card__tags" aria-label="Technologies used">
+              <li>Python</li>
+              <li>Data Visualization</li>
+              <li>MySQL</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BLOG SECTION ===== -->
+    <section id="blog" class="section section--alt" aria-labelledby="blog-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label" aria-hidden="true">04</span>
+          <h2 id="blog-heading" class="section-title">Latest Writing</h2>
+        </div>
+        <div class="blog__grid">
+
+          <article class="blog-card reveal" aria-labelledby="blog1-title">
+            <div class="blog-card__meta">
+              <span class="blog-card__tag">Full-Stack</span>
+              <time class="blog-card__date" datetime="2024-09-01">Sep 2024</time>
+            </div>
+            <h3 id="blog1-title" class="blog-card__title">How I Built My First Full-Stack App</h3>
+            <p class="blog-card__excerpt">From concept to deployment — the real story behind building an interactive quiz application, including the mistakes, breakthroughs, and lessons learned.</p>
+            <a href="#" class="blog-card__link" aria-label="Read full article: How I Built My First Full-Stack App">
+              Read article <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="blog-card reveal reveal--delay" aria-labelledby="blog2-title">
+            <div class="blog-card__meta">
+              <span class="blog-card__tag">DevTools</span>
+              <time class="blog-card__date" datetime="2024-10-01">Oct 2024</time>
+            </div>
+            <h3 id="blog2-title" class="blog-card__title">Top 5 Tools for Backend Developers</h3>
+            <p class="blog-card__excerpt">The tools I use daily that have transformed my workflow — from API testing to database management, these are the ones that actually make a difference.</p>
+            <a href="#" class="blog-card__link" aria-label="Read full article: Top 5 Tools for Backend Developers">
+              Read article <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="blog-card reveal reveal--delay-2" aria-labelledby="blog3-title">
+            <div class="blog-card__meta">
+              <span class="blog-card__tag">Education</span>
+              <time class="blog-card__date" datetime="2024-11-01">Nov 2024</time>
+            </div>
+            <h3 id="blog3-title" class="blog-card__title">Teaching Math for 7 Years Made Me a Better Engineer</h3>
+            <p class="blog-card__excerpt">The unexpected ways that a decade of teaching mathematics prepared me for software engineering — debugging, abstraction, and communicating complex ideas simply.</p>
+            <a href="#" class="blog-card__link" aria-label="Read full article: Teaching Math for 7 Years Made Me a Better Engineer">
+              Read article <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section id="testimonials" class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label" aria-hidden="true">05</span>
+          <h2 id="testimonials-heading" class="section-title">What People Say</h2>
+        </div>
+        <div class="testimonials__grid">
+
+          <figure class="testimonial reveal" role="group" aria-labelledby="t1-name">
+            <svg class="testimonial__quote-icon" viewBox="0 0 40 28" fill="none" aria-hidden="true">
+              <path d="M0 28V17.143C0 7.429 5.714 2.286 17.143 0l2.286 3.429C13.143 4.571 9.714 7.714 9.143 12H17.143V28H0ZM22.857 28V17.143C22.857 7.429 28.571 2.286 40 0l2.286 3.429C36 4.571 32.571 7.714 32 12h8V28H22.857Z" fill="currentColor"/>
+            </svg>
+            <blockquote>
+              <p>"Benjamin is an exceptional teacher and developer. His online assessment system revolutionized our school's grading process — saving hours every week."</p>
+            </blockquote>
+            <figcaption>
+              <strong id="t1-name">John Doe</strong>
+              <span>Principal, Accra Community School</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal reveal--delay" role="group" aria-labelledby="t2-name">
+            <svg class="testimonial__quote-icon" viewBox="0 0 40 28" fill="none" aria-hidden="true">
+              <path d="M0 28V17.143C0 7.429 5.714 2.286 17.143 0l2.286 3.429C13.143 4.571 9.714 7.714 9.143 12H17.143V28H0ZM22.857 28V17.143C22.857 7.429 28.571 2.286 40 0l2.286 3.429C36 4.571 32.571 7.714 32 12h8V28H22.857Z" fill="currentColor"/>
+            </svg>
+            <blockquote>
+              <p>"Working with Benjamin was a pleasure. He brings clarity, dedication, and a genuine desire to solve real problems to every project he touches."</p>
+            </blockquote>
+            <figcaption>
+              <strong id="t2-name">Ama Asante</strong>
+              <span>Senior Developer, ALX Community</span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="section section--alt" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label" aria-hidden="true">06</span>
+          <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__left reveal">
+            <p class="contact__intro">
+              I'm open to new opportunities, collaborations, and conversations. Whether you have a project in mind or just want to say hello — my inbox is always open.
+            </p>
+            <ul class="contact__links" role="list">
+              <li>
+                <a href="mailto:benjamin@torvex.info" class="contact__link" aria-label="Send email to Benjamin Torfu">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  benjamin@torvex.info
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/gameli-lab" class="contact__link" target="_blank" rel="noopener noreferrer" aria-label="Visit Benjamin Torfu's GitHub profile (opens in new tab)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  github.com/gameli-lab
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/benjamintorfu" class="contact__link" target="_blank" rel="noopener noreferrer" aria-label="Visit Benjamin Torfu's LinkedIn profile (opens in new tab)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  linkedin.com/in/benjamintorfu
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact__form-wrap reveal reveal--delay">
+            <form id="contact-form" class="contact__form" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Kofi Mensah" required autocomplete="name" aria-required="true" />
+                <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address <span aria-hidden="true">*</span></label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email" aria-required="true" />
+                <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message <span aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Tell me about your project or say hello..." required rows="5" aria-required="true"></textarea>
+                <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                Send Message
+                <span class="btn__loader" aria-hidden="true"></span>
+              </button>
+              <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
+                ✓ Message sent! I'll get back to you soon.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">
+          &copy; <span id="year"></span> Benjamin Torfu. Crafted with care in Ghana.
+        </p>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Scroll to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="js/script.js" defer></script>
+</body>
 </html>
